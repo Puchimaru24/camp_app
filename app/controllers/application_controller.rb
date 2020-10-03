@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     
-  def cafe
+  def camp
     render html: "camp_appへようこそ!"
   end
 end
