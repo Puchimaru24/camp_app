@@ -1,3 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+    
+  def cafe
+    render html: "camp_appへようこそ!"
+  end
 end
