@@ -2,15 +2,33 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
     <%= link_to "Camp App", root_path, id: "logo", class: "navbar-brand" %>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <%= link_to "ホーム", root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Camp Appとは", about_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Contents", "#", class: "nav-link" %>
-      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "ギア一覧", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "タイムライン", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "プラン", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "ホーム", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Camp Appとは", about_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "アカウント作成", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </header>
