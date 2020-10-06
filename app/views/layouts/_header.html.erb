@@ -1,11 +1,17 @@
 <header>
-  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark mb-3">
-    <div class="navbar-brand">
-      <%= link_to "CampApp", root_path, id: "logo" %>
-    </div>
-    <ul class="navbar-nav">
-      <li class="nav-link"><%= link_to "ホーム",   root_path %></li>
-      <li class="nav-link"><%= link_to "CampAppとは",  about_path  %></li>
+  <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+    <%= link_to "Camp App", root_path, id: "logo", class: "navbar-brand" %>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "ホーム", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Camp Appとは", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contents", "#", class: "nav-link" %>
+      </li>
     </ul>
   </nav>
 </header>
+

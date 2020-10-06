@@ -11,3 +11,10 @@
  * It is generally better to create a new file per style scope.
  */
 @import "bootstrap";
+
+.nav-link {
+    color: white;
+}
+body {
+    padding-top: 60px;
+}
