@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>新しいギアを追加</h2>
+  <%= form_with(model: @gear, url: "/gears/create", local: true) do |f| %>
+    <%= f.text_field :category %>
+    <%= f.text_field :name %>
+    <%= f.text_field :maker %>
+    <%= f.number_field :price %>
+    <%= f.text_area :memo %>
+    <%= f.submit %>
+  <% end %>
+</div>

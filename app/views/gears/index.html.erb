@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My Gear</h1>
+  
+  <%= link_to(gears_new_path) do %>
+    <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
+      ＋
+    </button>
+  <% end %>
+  
+  <%= @gears.each do |gear| %>
+    <%= gear.name %>
+  <% end %>
+</div>
