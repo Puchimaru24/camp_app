@@ -1,0 +1,12 @@
+<div class="main gears-show">
+  <div class="container">
+    <div class="gear-show-item">
+      <p>
+        <%= @gear.name %>
+      </p>
+    </div>
+    <%= link_to("/gears/#{@gear.id}/destroy", {method: "delete"}) do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </div>
+</div>

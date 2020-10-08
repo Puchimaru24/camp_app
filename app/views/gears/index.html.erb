@@ -1,13 +1,16 @@
 <div class="container">
   <h1>My Gear</h1>
   
+  <% @gears.each do |gear| %>
+    <div class="gear-index-item mb-20">
+      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    </div>
+  <% end %>
+  
   <%= link_to(gears_new_path) do %>
     <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
       ＋
     </button>
   <% end %>
   
-  <%= @gears.each do |gear| %>
-    <%= gear.name %>
-  <% end %>
 </div>
