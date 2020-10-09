@@ -4,7 +4,7 @@ class GearsController < ApplicationController
   end
   
   def show
-    @gear = Gear.find(params[:id])
+    @gear = find_gear_by_id
   end
 
   def new
@@ -22,6 +22,17 @@ class GearsController < ApplicationController
       end
   end
   
+  def edit
+    @gear = find_gear_by_id
+  end
+  
+  def update
+    gear = find_gear_by_id
+    gear.update(gear_params)
+    redirect_to gears_path
+    flash[:notice] = "編集が完了しました"
+  end
+  
   def destroy
     @gear = Gear.find(params[:id])
     @gear.destroy
@@ -29,8 +40,12 @@ class GearsController < ApplicationController
     flash[:notice] = "ギアを削除しました"
   end
   
+  private
   def gear_params
     params.require(:gear).permit(:category, :name, :maker, :price, :memo)
   end
   
+  def find_gear_by_id
+    Gear.find(params[:id])
+  end
 end

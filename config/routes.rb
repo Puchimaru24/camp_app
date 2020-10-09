@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   get 'gears/:id', to: 'gears#show'
   delete 'gears/:id/destroy', to: 'gears#destroy'
   
+  get 'gears/:id/edit', to: 'gears#edit'
+  patch 'gears/:id/update', to: 'gears#update'
+  
   
 end

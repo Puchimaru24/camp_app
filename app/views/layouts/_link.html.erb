@@ -1,0 +1,8 @@
+<div class="link">
+  <%= link_to("/gears/#{@gear.id}/edit") do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+  <%= link_to("/gears/#{@gear.id}/destroy", {method: "delete"}) do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+</div>
