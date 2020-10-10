@@ -1,6 +1,17 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  
+  #アカウント登録後のリダイレクト先
+  def after_sign_up_path_for(resource)
+    gears_path
+  end
+  
+  #アカウント編集後のリダイレクト先
+  def after_update_path_for(resource)
+    users_show_path
+  end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
