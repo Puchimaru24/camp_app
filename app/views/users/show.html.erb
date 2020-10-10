@@ -1,6 +1,12 @@
-<h1>about me</h1>
+<h1>Profile</h1>
 
 <h3>ユーザー名</h3>
-<%= @user.username %>
+<%= current_user.username %>
 <h3>メールアドレス</h3>
-<%= @user.email %>
+<%= current_user.email %>
+<br>
+<div class="link">
+  <%= link_to("/users/edit") do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+</div>

@@ -1,10 +1,23 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :configure_account_update_params, only: [:update]
   
   #アカウント登録後のリダイレクト先
   def after_sign_up_path_for(resource)
     gears_path
+  end
+  
+  protected
+
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+  end
+  
+  protected
+  
+  def update_resource(resource, params)
+    resource.update_without_password(params)
   end
   
   #アカウント編集後のリダイレクト先
@@ -12,6 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     users_show_path
   end
 
+  
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
