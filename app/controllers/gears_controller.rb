@@ -1,10 +1,13 @@
 class GearsController < ApplicationController
+
   def index
-    @gears = Gear.all
+    @user = current_user
+    @gears = Gear.where(user_id: @user.id)
   end
   
   def show
     @gear = find_gear_by_id
+    @user = @gear.user
   end
 
   def new
@@ -12,7 +15,10 @@ class GearsController < ApplicationController
   end
   
   def create
-    @gear = Gear.new(gear_params)
+    @gear = Gear.new(
+      gear_params
+      )
+    @gear.user_id = current_user.id
       if @gear.save
         flash[:notice] = "ギア登録が完了しました"
         redirect_to gears_path
