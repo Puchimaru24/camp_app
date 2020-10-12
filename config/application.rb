@@ -17,5 +17,9 @@ module CampApp
     
     config.i18n.default_locale = :ja
     
+    # DBの保存時間を変更する
+    config.active_record.default_timezone = :local
+    config.time_zone = 'Tokyo'
+    
   end
 end

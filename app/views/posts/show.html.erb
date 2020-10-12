@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="post-show-item">
+    <% if @post.updated_at != @post.created_at %>
+    <p>編集済み</p>
+    <% end %>
+    <h3>
+      <%= @post.content %>
+    </h3>
+    <div class="post-time">
+      <%= distance_of_time_in_words_to_now(@post.created_at) %>前に作成
+      <br>
+      <%= simple_time(@post[:created_at]) %>
+    </div>
+    <%= render "layouts/linkPost" %>
+  </div>
+  <%= render "layouts/returnPost" %>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>タイムライン</h1>
+  <% @posts.each do |post| %>
+    <div class="posts-index-item mb-20">
+      <div class="post-right">
+        <%= link_to(post.content, "/posts/#{post.id}") %>
+      </div>
+    </div>
+  <% end %>
+  
+  <%= link_to(posts_new_path) do %>
+    <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
+      ＋
+    </button>
+  <% end %>
+</div>

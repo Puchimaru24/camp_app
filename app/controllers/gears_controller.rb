@@ -7,7 +7,6 @@ class GearsController < ApplicationController
   
   def show
     @gear = find_gear_by_id
-    @user = @gear.user
   end
 
   def new
@@ -40,7 +39,7 @@ class GearsController < ApplicationController
   end
   
   def destroy
-    @gear = Gear.find(params[:id])
+    @gear = find_gear_by_id
     @gear.destroy
     redirect_to gears_path
     flash[:notice] = "ギアを削除しました"

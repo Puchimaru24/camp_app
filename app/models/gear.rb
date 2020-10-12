@@ -6,7 +6,4 @@ class Gear < ApplicationRecord
     return User.find_by(id: self.user_id)
   end
   
-  # def gears
-  #   return Gear.where(user_id: self.id)
-  # end
 end
