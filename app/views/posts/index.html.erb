@@ -3,6 +3,11 @@
   
   <% @posts.each do |post| %>
     <div class="posts-index-item mb-20">
+      <% if post.avatar.attached? %>
+        <%= image_tag post.avatar %>
+      <% else %>
+        <img class="index-img" src="<%= "/images/default_user.png" %>" alt="Userimage">
+      <% end %>
       <%= link_to(post.content, "/posts/#{post.id}") %>
     </div>
   <% end %>
