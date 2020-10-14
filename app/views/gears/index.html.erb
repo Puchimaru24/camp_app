@@ -3,6 +3,11 @@
   
   <% @gears.each do |gear| %>
     <div class="gear-index-item mb-20">
+      <% if gear.image.attached? %>
+        <%= image_tag gear.image, class: "index-img" %>
+      <% else %>
+        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+      <% end %>
       <%= link_to(gear.name, "/gears/#{gear.id}") %>
     </div>
   <% end %>

@@ -1,5 +1,9 @@
 <%= form_with(model: @gear, url: "/gears/#{@gear.id}/update", local: true) do |f| %>
   <div class="form-group">
+    <div>
+      <%= f.label :image, "画像" %><br>
+      <%= f.file_field :image %>
+    </div>
     <div class="d-block">
       <%= f.label :category, "カテゴリー" %>
       <span class="text-danger">*</span>

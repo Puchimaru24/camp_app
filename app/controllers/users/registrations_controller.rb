@@ -8,6 +8,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     gears_path
   end
   
+  def update
+    super
+    if account_update_params[:avatar].present?
+      resource.avatar.attach(account_update_params[:avatar])    
+    end
+  end
+
+  
   protected
 
   def configure_account_update_params
@@ -45,9 +53,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
 
   # DELETE /resource
   # def destroy

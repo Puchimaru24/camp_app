@@ -14,9 +14,7 @@ class GearsController < ApplicationController
   end
   
   def create
-    @gear = Gear.new(
-      gear_params
-      )
+    @gear = Gear.new(gear_params)
     @gear.user_id = current_user.id
       if @gear.save
         flash[:notice] = "ギア登録が完了しました"
@@ -32,10 +30,14 @@ class GearsController < ApplicationController
   end
   
   def update
-    gear = find_gear_by_id
-    gear.update(gear_params)
-    redirect_to gears_path
-    flash[:notice] = "編集が完了しました"
+    @gear = find_gear_by_id
+    if @gear.update(gear_params)
+      flash[:notice] = "編集が完了しました"
+      redirect_to gears_path
+    else
+      flash.now[:alert] = "必須項目を入力してください"
+      render :edit
+    end
   end
   
   def destroy
@@ -47,7 +49,7 @@ class GearsController < ApplicationController
   
   private
   def gear_params
-    params.require(:gear).permit(:category, :name, :maker, :price, :memo)
+    params.require(:gear).permit(:category, :name, :maker, :price, :memo, :image)
   end
   
   def find_gear_by_id

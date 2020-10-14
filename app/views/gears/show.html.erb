@@ -3,12 +3,21 @@
     <div class="gear-show-item">
       
       <div class="card">
-        <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title"><%= @gear.name %></h4>
+          <<%= @gear.category %>>
+        </div>
+        
+        <% if @gear.image.attached? %>
+          <%= image_tag @gear.image, class: "card-img" %>
+        <% else %>
+          <img class="card-img" src="<%= "/images/default_gear.jpg" %>" alt="Card image cap">
+        <% end %>
+        
+        <div class="card-body">
           <p class="card-text">
-            <%= @gear.category %>
+            <h4 class="card-title"><%= @gear.name %></h4>
           </p>
+        </div>
         </div>
       </div>
       

@@ -1,12 +1,24 @@
-<h1>Profile</h1>
-
-<h3>ユーザー名</h3>
-<%= current_user.username %>
-<h3>メールアドレス</h3>
-<%= current_user.email %>
-<br>
-<div class="link">
-  <%= link_to("/users/edit") do %>
-    <i class="fas fa-edit"></i>
-  <% end %>
+<div class="container">
+  <h1>Profile</h1>
+  
+  <div class="user-img">
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, class: "avatar rounded-circle mx-auto d-block" %>
+    <% else %>
+      <img class="avatar rounded-circle mx-auto d-block" src="<%= "/images/default_user.png" %>" alt="image">
+    <% end %>
+  </div>
+  
+  <div class="user-content">
+    <h3>ユーザー名</h3>
+    <%= current_user.username %>
+    <h3>メールアドレス</h3>
+    <%= current_user.email %>
+  </div>
+  
+  <div class="link">
+    <%= link_to("/users/edit") do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
+  </div>
 </div>

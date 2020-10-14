@@ -14,12 +14,14 @@
 @import "static_pages";
 @import "gears";
 @import "posts";
+@import "users";
 
 .nav-link {
   color: white;
 }
 body {
   padding-top: 55px;
+  margin-bottom: 50px;
 }
 h1 {
   text-align: center;
