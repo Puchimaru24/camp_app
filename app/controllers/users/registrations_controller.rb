@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   #アカウント編集後のリダイレクト先
   def after_update_path_for(resource)
-    users_show_path
+    "/users/#{current_user.id}"
   end
 
   
