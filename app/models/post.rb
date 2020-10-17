@@ -3,4 +3,8 @@ class Post < ApplicationRecord
   validates :user_id, {presence: true}
     
   has_one_attached :avatar
+  
+  def user
+    return User.find_by(id: self.user_id)
+  end
 end

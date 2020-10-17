@@ -1,11 +1,25 @@
 <div class="container">
   <div class="post-show-item">
+    
     <% if @post.updated_at != @post.created_at %>
     <p>編集済み</p>
     <% end %>
+    <div class="post-show-user">
+      <div class="post-show-img d-inline">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, class: "avatar-show rounded-circle mx-auto" %>
+        <% else %>
+          <img class="avatar-show rounded-circle mx-auto" src="<%= "/images/default_user.png" %>" alt="image">
+        <% end %>
+      </div>
+      <div class="post-show-username d-inline">
+        <%= link_to @user.username, "/users/#{@user.id}" %>
+      </div>
+    </div>
     <h3>
       <%= @post.content %>
     </h3>
+    
     <div class="post-time">
       <%= distance_of_time_in_words_to_now(@post.created_at) %>前に作成
       <br>

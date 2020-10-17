@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
   }
   get 'users', to: 'users#index'
-  get "users/show" => "users#show"
+  get "users/:id" => "users#show"
 
   
   get '/gears', to: 'gears#index'

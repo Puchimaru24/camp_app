@@ -3,11 +3,21 @@
   
   <% @posts.each do |post| %>
     <div class="posts-index-item mb-20">
-      <% if post.avatar.attached? %>
-        <%= image_tag post.avatar %>
-      <% else %>
-        <img class="index-img" src="<%= "/images/default_user.png" %>" alt="Userimage">
-      <% end %>
+      <div class="posts-index-user">
+        <!--avatar-->
+        <div class="posts-index-img d-inline">
+          <% if post.user.avatar.attached? %>
+            <%= image_tag post.user.avatar, class: "avatar-index rounded-circle mx-auto" %>
+          <% else %>
+            <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png" %>" alt="Userimage">
+          <% end %>
+        </div>
+        <!--username-->
+        <div class="posts-index-username d-inline">
+          <%= link_to post.user.username, "/users/#{post.user.id}" %>
+        </div>
+      </div>
+      <!--content-->
       <%= link_to(post.content, "/posts/#{post.id}") %>
     </div>
   <% end %>

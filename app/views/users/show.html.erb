@@ -11,14 +11,15 @@
   
   <div class="user-content">
     <h3>ユーザー名</h3>
-    <%= current_user.username %>
+    <%= @user.username %>
     <h3>メールアドレス</h3>
-    <%= current_user.email %>
+    <%= @user.email %>
   </div>
-  
-  <div class="link">
-    <%= link_to("/users/edit") do %>
-      <i class="fas fa-edit"></i>
-    <% end %>
-  </div>
+  <% if current_user == @user %>
+    <div class="link">
+      <%= link_to("/users/edit") do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </div>
+  <% end %>
 </div>
