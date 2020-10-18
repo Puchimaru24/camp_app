@@ -7,51 +7,67 @@
     </button>
   <% end %>
   
-  <a class="category bg-success">住居系</a>
+  <button class="btn category btn-success w-100" type="button" data-toggle="collapse" data-target="#index1" aria-expanded="true" aria-controls="index1">
+    住居系
+  </button>
   <% @gear1.each do |gear| %>
-    <div class="gear-index-item mb-20">
-      <% if gear.image.attached? %>
-        <%= image_tag gear.image, class: "index-img" %>
-      <% else %>
-        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
-      <% end %>
-      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    <div class="collapse show" id="index1">
+      <div class="gear-index-item mb-20">
+        <% if gear.image.attached? %>
+          <%= image_tag gear.image, class: "index-img" %>
+        <% else %>
+          <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+        <% end %>
+        <%= link_to(gear.name, "/gears/#{gear.id}") %>
+      </div>
     </div>
   <% end %>
   
-  <a class="category bg-warning">料理系</a>
+  <button class="btn category btn-warning w-100" type="button" data-toggle="collapse" data-target="#index2" aria-expanded="true" aria-controls="index2">
+    料理系
+  </button>
   <% @gear2.each do |gear| %>
-    <div class="gear-index-item mb-20">
-      <% if gear.image.attached? %>
-        <%= image_tag gear.image, class: "index-img" %>
-      <% else %>
-        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
-      <% end %>
-      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    <div class="collapse show" id="index2">
+      <div class="gear-index-item mb-20">
+        <% if gear.image.attached? %>
+          <%= image_tag gear.image, class: "index-img" %>
+        <% else %>
+          <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+        <% end %>
+        <%= link_to(gear.name, "/gears/#{gear.id}") %>
+      </div>
     </div>
   <% end %>
   
-  <a class="category bg-danger">火周り系</a>
+  <button class="btn category btn-danger w-100" type="button" data-toggle="collapse" data-target="#index3" aria-expanded="true" aria-controls="index3">
+    火周り
+  </button>
   <% @gear3.each do |gear| %>
-    <div class="gear-index-item mb-20">
-      <% if gear.image.attached? %>
-        <%= image_tag gear.image, class: "index-img" %>
-      <% else %>
-        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
-      <% end %>
-      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    <div class="collapse show" id="index3">
+      <div class="gear-index-item mb-20">
+        <% if gear.image.attached? %>
+          <%= image_tag gear.image, class: "index-img" %>
+        <% else %>
+          <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+        <% end %>
+        <%= link_to(gear.name, "/gears/#{gear.id}") %>
+      </div>
     </div>
   <% end %>
   
-  <a class="category bg-secondary">その他</a>
+  <button class="btn category btn-secondary w-100" type="button" data-toggle="collapse" data-target="#index4" aria-expanded="true" aria-controls="index4">
+    その他
+  </button>
   <% @gear4.each do |gear| %>
-    <div class="gear-index-item mb-20">
-      <% if gear.image.attached? %>
-        <%= image_tag gear.image, class: "index-img" %>
-      <% else %>
-        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
-      <% end %>
-      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    <div class="collapse show" id="index4">
+      <div class="gear-index-item mb-20">
+        <% if gear.image.attached? %>
+          <%= image_tag gear.image, class: "index-img" %>
+        <% else %>
+          <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+        <% end %>
+        <%= link_to(gear.name, "/gears/#{gear.id}") %>
+      </div>
     </div>
   <% end %>
 </div>

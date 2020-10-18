@@ -1,6 +1,8 @@
 // Place all the styles related to the Gear controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.collapse{
+}
 .gear-index-item {
   padding: 20px 30px;
   background-color: white;
@@ -23,7 +25,6 @@
 }
 .category {
   display: block;
-  margin-top: 30px;
   padding: 10px 0;
   text-align: center;
   color: white;

@@ -16,4 +16,22 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+/*global $ */
 
+// $(function(){
+//   $('.js-menu_item_link').each(function(){
+//     $(this).on('click',function(){
+//       $("+.gear-index-item",this).slideToggle();
+//       return false;
+//     });
+//   });
+// });
+
+// $(function(){
+//   //.accordion_oneの中の.accordion_headerがクリックされたら
+//   $('.category').click(function(){
+//     //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+//     $(this).next('.gear-index-item').slideToggle();
+//     $(this).toggleClass("open");
+//   });
+// });
