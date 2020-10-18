@@ -2,7 +2,10 @@ class GearsController < ApplicationController
 
   def index
     @user = current_user
-    @gears = Gear.where(user_id: @user.id)
+    @gear1 = Gear.where(user_id: @user.id, category: "住居系")
+    @gear2 = Gear.where(user_id: @user.id, category: "料理系")
+    @gear3 = Gear.where(user_id: @user.id, category: "火周り系")
+    @gear4 = Gear.where(user_id: @user.id, category: "その他")
   end
   
   def show

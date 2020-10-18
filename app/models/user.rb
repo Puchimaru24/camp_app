@@ -8,4 +8,7 @@ class User < ApplicationRecord
   
   has_one_attached :avatar
   
+  def posts
+    return Post.where(user_id: self.id)
+  end
 end

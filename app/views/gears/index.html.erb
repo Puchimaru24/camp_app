@@ -1,7 +1,14 @@
 <div class="container">
   <h1>My Gear</h1>
   
-  <% @gears.each do |gear| %>
+  <%= link_to(gears_new_path) do %>
+    <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
+      ＋
+    </button>
+  <% end %>
+  
+  <a class="category bg-success">住居系</a>
+  <% @gear1.each do |gear| %>
     <div class="gear-index-item mb-20">
       <% if gear.image.attached? %>
         <%= image_tag gear.image, class: "index-img" %>
@@ -12,9 +19,39 @@
     </div>
   <% end %>
   
-  <%= link_to(gears_new_path) do %>
-    <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
-      ＋
-    </button>
+  <a class="category bg-warning">料理系</a>
+  <% @gear2.each do |gear| %>
+    <div class="gear-index-item mb-20">
+      <% if gear.image.attached? %>
+        <%= image_tag gear.image, class: "index-img" %>
+      <% else %>
+        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+      <% end %>
+      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    </div>
+  <% end %>
+  
+  <a class="category bg-danger">火周り系</a>
+  <% @gear3.each do |gear| %>
+    <div class="gear-index-item mb-20">
+      <% if gear.image.attached? %>
+        <%= image_tag gear.image, class: "index-img" %>
+      <% else %>
+        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+      <% end %>
+      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    </div>
+  <% end %>
+  
+  <a class="category bg-secondary">その他</a>
+  <% @gear4.each do |gear| %>
+    <div class="gear-index-item mb-20">
+      <% if gear.image.attached? %>
+        <%= image_tag gear.image, class: "index-img" %>
+      <% else %>
+        <img class="index-img" src="<%= "/images/default_gear.jpg" %>" alt="Index image cap">
+      <% end %>
+      <%= link_to(gear.name, "/gears/#{gear.id}") %>
+    </div>
   <% end %>
 </div>
