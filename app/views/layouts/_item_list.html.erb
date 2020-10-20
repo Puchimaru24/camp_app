@@ -1,0 +1,10 @@
+<% if @items.present? %>
+  <% @items.first(10).each do |item| %>
+    <div class="list">
+
+ 
+      <%= link_to item.name, "#{item.url}" %>
+      <%= number_with_delimiter(item.price) %>円
+    </div>
+  <% end %>
+<% end %>
