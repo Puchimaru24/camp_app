@@ -13,6 +13,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'devise'
 gem 'rails-i18n'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'rakuten_web_service'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

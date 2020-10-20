@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   post 'posts/:id/update', to: 'posts#update'
   delete 'posts/:id/destroy', to: 'posts#destroy'
   
+  get '/search', to: 'search#search'
+  
 end
