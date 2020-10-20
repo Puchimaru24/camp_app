@@ -29,4 +29,9 @@ Rails.application.routes.draw do
   
   get '/search', to: 'search#search'
   
+  get '/sets', to: 'sets#index'
+  get 'sets/new', to: 'sets#new'
+  get 'sets/:id', to: 'sets#show'
+  post 'sets/create'
+  
 end
