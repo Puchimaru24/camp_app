@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-
+  
+  
+  
+  
   root 'static_pages#home'
   get  '/about', to: 'static_pages#about'
   
@@ -8,8 +11,8 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
   }
   get 'users', to: 'users#index'
-  get "users/:id" => "users#show"
-
+  get 'users/:id' => 'users#show'
+  get 'users/:id/likes' => 'users#likes'
   
   get '/gears', to: 'gears#index'
   get 'gears/new', to: 'gears#new'
@@ -33,5 +36,8 @@ Rails.application.routes.draw do
   get 'sets/new', to: 'sets#new'
   get 'sets/:id', to: 'sets#show'
   post 'sets/create'
+  
+  post 'likes/:post_id/create', to: 'likes#create'
+  delete 'likes/:post_id/destroy', to: 'likes#destroy'
   
 end

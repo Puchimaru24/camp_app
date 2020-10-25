@@ -6,8 +6,9 @@ class Gear < ApplicationRecord
   # ActiveRecord
   has_one_attached :image
   
-  def user
-    return User.find_by(id: self.user_id)
-  end
+  belongs_to :user
+  # def user
+  #   return User.find_by(id: self.user_id)
+  # end
   
 end

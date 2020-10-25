@@ -17,9 +17,12 @@
 @import "posts";
 @import "users";
 @import "search";
+@import "likes";
 
 
-
+ul {
+  list-style: none;
+}
 .section {
   display: flex;
   flex-direction: column;
