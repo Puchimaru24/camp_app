@@ -1,3 +1,35 @@
 <% provide(:title, "ホーム") %>
-<h1>CampAppへようこそ</h1>
+
+<section class="mainKv">
+  <div class="mainKv-bg">
+    <div class="mainKv-cat">
+      <div class="mainKv-content">
+        <h1 class="mainKv-title">
+          CampApp
+        </h1>
+        <h2 class="mainKv-subtitle">
+          あなたのキャンプライフをサポート
+        </h2>
+      </div>
+      <div class="mainKv-subcontent">
+        <% if user_signed_in? %>
+        
+          <%= link_to (gears_new_path) do %>
+            <button class="btn btn-warning btn-newgear">さっそくギアを登録しよう！</button>
+          <% end %>
+          
+        <% else %>
+        
+          <%= link_to("/users/sign_in") do %>
+            <button class="btn-mainKv btn btn-warning d-block">ログイン</button>
+          <% end %>
+          <%= link_to("/users/sign_up") do %>
+            <button class="btn-mainKv btn btn-primary d-block" id="last-btn">今すぐ登録</button>
+          <% end %>   
+          
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 

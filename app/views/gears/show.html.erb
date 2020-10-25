@@ -1,36 +1,38 @@
-<div class="main gears-show">
-  <div class="container">
-    <div class="gear-show-item">
-      
-      <div class="card">
-        <div class="card-body">
-          <<%= @gear.category %>>
+<div class="main-content">
+  <div class="main gears-show">
+    <div class="container">
+      <div class="gear-show-item">
+        
+        <div class="card">
+          <div class="card-body">
+            <<%= @gear.category %>>
+          </div>
+          
+          <% if @gear.image.attached? %>
+            <%= image_tag @gear.image, class: "card-img" %>
+          <% else %>
+            <img class="card-img" src="<%= "/images/default_gear.jpg" %>" alt="Card image cap">
+          <% end %>
+          
+          <div class="card-body">
+            <p class="card-text">
+              <h4 class="card-title"><%= @gear.name %></h4>
+            </p>
+          </div>
+          </div>
         </div>
         
-        <% if @gear.image.attached? %>
-          <%= image_tag @gear.image, class: "card-img" %>
-        <% else %>
-          <img class="card-img" src="<%= "/images/default_gear.jpg" %>" alt="Card image cap">
-        <% end %>
-        
-        <div class="card-body">
-          <p class="card-text">
-            <h4 class="card-title"><%= @gear.name %></h4>
-          </p>
-        </div>
-        </div>
+        <ul class="list-group">
+          <p>メーカー</p>
+          <li class="list-group-item"><%= @gear.maker %></li>
+          <p>価格</p>
+          <li class="list-group-item"><%= number_to_currency(@gear.price, :format => "%u%n", :unit => "￥") %></li>
+          <p>メモ</p>
+          <li class="list-group-item"><%= @gear.memo %></li>
+        </ul>
+        <%= render "layouts/link" %>
       </div>
-      
-      <ul class="list-group">
-        <p>メーカー</p>
-        <li class="list-group-item"><%= @gear.maker %></li>
-        <p>価格</p>
-        <li class="list-group-item"><%= @gear.price %></li>
-        <p>メモ</p>
-        <li class="list-group-item"><%= @gear.memo %></li>
-      </ul>
-      <%= render "layouts/link" %>
+      <%= render "layouts/return" %>
     </div>
-    <%= render "layouts/return" %>
   </div>
 </div>

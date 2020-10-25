@@ -14,6 +14,8 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'rakuten_web_service'
+gem "aws-sdk-s3", require: false
+gem 'paranoia'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

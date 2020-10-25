@@ -4,7 +4,8 @@ class Post < ApplicationRecord
     
   has_one_attached :avatar
   
-  def user
-    return User.find_by(id: self.user_id)
-  end
+  belongs_to :user
+  # def user
+  #   return User.find_by(id: self.user_id)
+  # end
 end

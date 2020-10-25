@@ -1,17 +1,19 @@
-<div class="container">
-  <h1>My Gear Set
-    <%= link_to(sets_new_path) do %>
-      <span>
-        <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
-          ＋
-        </button>
-      </span>
+<div class="main-content">
+  <div class="container">
+    <h1>My Gear Set
+      <%= link_to(sets_new_path) do %>
+        <span>
+          <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
+            ＋
+          </button>
+        </span>
+      <% end %>
+    </h1>
+    
+    <% @sets.each do |set| %>
+      <div class="gear-set-index">
+        <%= set.title %>
+      </div>
     <% end %>
-  </h1>
-  
-  <% @sets.each do |set| %>
-    <div class="gear-set-index">
-      <%= set.title %>
-    </div>
-  <% end %>
+  </div>
 </div>

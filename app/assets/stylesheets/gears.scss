@@ -19,6 +19,7 @@
   width: 400px;
 }
 .index-img {
+  display: inline-block;
   width: 75px;
   height: 75px;
   margin-right: 20px;
@@ -31,4 +32,11 @@
 }
 .categoryContainer {
   margin-top: 10px;
+}
+.main-item{
+  font-size: 1.3rem;
+}
+.bottom-item {
+  display: inline;
+  margin-left: 15px;
 }

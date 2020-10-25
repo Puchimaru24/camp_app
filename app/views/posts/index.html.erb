@@ -1,39 +1,41 @@
-<div class="container">
-  <h1>TimeLine
-    <%= link_to(posts_new_path) do %>
-      <span>
-        <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
-          ＋
-        </button>
-      </span>
-    <% end %>
-  </h1>
-  
-  <% @posts.each do |post| %>
-    <div class="posts-index-item mb-20">
-      <div class="posts-index-user">
-        <!--avatar-->
-        <div class="posts-index-img d-inline">
-          <%= link_to("/users/#{post.user.id}", class: "text-decoration-none") do %>
-            <% if post.user.avatar.attached? %>
-              <%= image_tag post.user.avatar, class: "avatar-index rounded-circle mx-auto" %>
-            <% else %>
-              <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png" %>" alt="Userimage">
-            <% end %>
-          <% end %>
-        </div>
-        <!--username-->
-        <div class="posts-index-username d-inline">
-          <%= link_to post.user.username, "/users/#{post.user.id}", class: "text-dark font-weight-bold" %>
-        </div>
-        <span class="text-secondary">
-        ・<%= distance_of_time_in_words_to_now(post.created_at) %>前
+<div class="main-content">
+  <div class="container">
+    <h1>TimeLine
+      <%= link_to(posts_new_path) do %>
+        <span>
+          <button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">
+            ＋
+          </button>
         </span>
+      <% end %>
+    </h1>
+    
+    <% @posts.each do |post| %>
+      <div class="posts-index-item mb-20">
+        <div class="posts-index-user">
+          <!--avatar-->
+          <div class="posts-index-img d-inline">
+            <%= link_to("/users/#{post.user.id}") do %>
+              <% if post.user.avatar.attached? %>
+                <%= image_tag post.user.avatar, class: "avatar-index rounded-circle mx-auto" %>
+              <% else %>
+                <img class="avatar-index rounded-circle mx-auto" src="<%= "/assets/default_user.png" %>" alt="Userimage">
+              <% end %>
+            <% end %>
+          </div>
+          <!--username-->
+          <div class="posts-index-username d-inline">
+            <%= link_to post.user.username, "/users/#{post.user.id}", class: "text-dark font-weight-bold" %>
+          </div>
+          <span class="text-secondary">
+          ・<%= distance_of_time_in_words_to_now(post.created_at) %>前
+          </span>
+        </div>
+        <!--content-->
+        <div class="post-content">
+          <%= link_to(post.content, "/posts/#{post.id}", class: "text-dark no-deco") %>
+        </div>
       </div>
-      <!--content-->
-      <div class="post-content">
-        <%= link_to(post.content, "/posts/#{post.id}", class: "text-dark no-deco") %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

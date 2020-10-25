@@ -1,34 +1,36 @@
-<div class="container">
-  <div class="post-show-item">
-    
-    <% if @post.updated_at != @post.created_at %>
-      <p class="text-secondary mt-0">編集済み</p>
-    <% end %>
-    <div class="post-show-user">
-      <div class="post-show-img d-inline">
-        <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar, class: "avatar-show rounded-circle mx-auto" %>
-        <% else %>
-          <img class="avatar-show rounded-circle mx-auto" src="<%= "/images/default_user.png" %>" alt="image">
-        <% end %>
+<div class="main-content">
+  <div class="container">
+    <div class="post-show-item">
+      
+      <% if @post.updated_at != @post.created_at %>
+        <p class="text-secondary mt-0">編集済み</p>
+      <% end %>
+      <div class="post-show-user">
+        <div class="post-show-img d-inline">
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class: "avatar-show rounded-circle mx-auto" %>
+          <% else %>
+            <img class="avatar-show rounded-circle mx-auto" src="<%= "/images/default_user.png" %>" alt="image">
+          <% end %>
+        </div>
+        <div class="post-show-username d-inline">
+          <%= link_to @user.username, "/users/#{@user.id}", class: "text-dark font-weight-bold" %>
+        </div>
       </div>
-      <div class="post-show-username d-inline">
-        <%= link_to @user.username, "/users/#{@user.id}", class: "text-dark font-weight-bold" %>
+      
+      <h5>
+        <%= @post.content %>
+      </h5>
+      
+      <div class="post-show-time text-secondary">
+        <%= distance_of_time_in_words_to_now(@post.created_at) %>前に作成
+        ・
+        <%= simple_time(@post[:created_at]) %>
       </div>
+      <% if current_user == @user %>
+        <%= render "layouts/linkPost" %>
+      <% end %>
     </div>
-    
-    <h5>
-      <%= @post.content %>
-    </h5>
-    
-    <div class="post-show-time text-secondary">
-      <%= distance_of_time_in_words_to_now(@post.created_at) %>前に作成
-      ・
-      <%= simple_time(@post[:created_at]) %>
-    </div>
-    <% if current_user == @user %>
-      <%= render "layouts/linkPost" %>
-    <% end %>
+    <%= render "layouts/returnPost" %>
   </div>
-  <%= render "layouts/returnPost" %>
 </div>
