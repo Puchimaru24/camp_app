@@ -7,7 +7,7 @@
           <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
-            <img class="index-img" src="/assets/default_gear.jpg" alt="Index image cap">
+            <%= image_tag "default_gear.jpg", class: "index-img" %>
           <% end %>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
@@ -34,7 +34,7 @@
           <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
-            <img class="index-img" src="/assets/default_gear.jpg"  alt="Index image cap">
+            <%= image_tag "default_gear.jpg", class: "index-img" %>
           <% end %>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
@@ -61,7 +61,7 @@
           <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
-            <img class="index-img" src="/assets/default_gear.jpg" alt="Index image cap">
+            <%= image_tag "default_gear.jpg", class: "index-img" %>
           <% end %>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
@@ -88,7 +88,7 @@
           <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
-            <img class="index-img" src="/assets/default_gear.jpg" alt="Index image cap">
+            <%= image_tag "default_gear.jpg", class: "index-img" %>
           <% end %>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
