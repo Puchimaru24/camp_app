@@ -19,7 +19,7 @@
               <% if post.user.avatar.attached? %>
                 <%= image_tag post.user.avatar, class: "avatar-index rounded-circle mx-auto" %>
               <% else %>
-                <img class="avatar-index rounded-circle mx-auto" src="<%= "/assets/default_user.png" %>" alt="Userimage">
+                <%= image_tag "default_user.png", class: "avatar-index rounded-circle mx-auto" %>
               <% end %>
             <% end %>
           </div>

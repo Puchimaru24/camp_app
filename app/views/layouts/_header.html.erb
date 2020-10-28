@@ -9,6 +9,9 @@
           <%= link_to "Profile", "/users/#{current_user.id}", class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Users", users_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "My Gear", gears_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
@@ -23,9 +26,6 @@
       <% else %>
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Camp Appとは", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "アカウント作成", new_user_registration_path, class: "nav-link" %>

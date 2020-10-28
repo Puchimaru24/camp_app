@@ -11,7 +11,7 @@
           <% if @gear.image.attached? %>
             <%= image_tag @gear.image, class: "card-img" %>
           <% else %>
-            <img class="card-img" src="<%= "/assets/default_gear.jpg" %>" alt="Card image cap">
+            <%= image_tag "default_gear.jpg", class: "card-img" %>
           <% end %>
           
           <div class="card-body">
