@@ -5,14 +5,17 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       
-      <%
-=begin%>
- <div class="field">
-        <%= f.label :アバター画像 %><br />
-        <%= f.file_field :avatar %>
-      </div> 
-<%
-=end%>
+       
+      <div class="field">
+        <%= f.label "アバター画像 (1 - 3)" %><br />
+        <%= f.number_field :image_id, autofocus: true, autocomplete: "image_id", class: "form-control", min: 1, max: 3  %>
+      </div>
+
+      <div class="container sample-images">
+        <%= image_tag "user1.png", class: "sample-img" %>
+        <%= image_tag "user2.png", class: "sample-img" %>
+        <%= image_tag "user3.png", class: "sample-img" %>
+      </div>
       
       <div class="field">
         <%= f.label :ユーザー名 %><br />
@@ -36,6 +39,8 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
       </div>
+
+      <p><span class="text-danger">※</span>全て必須項目です</p>
 
       <br>
 

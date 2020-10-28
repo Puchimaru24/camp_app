@@ -7,9 +7,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar] )
     devise_parameter_sanitizer.permit(:sign_up, keys: [:profile] )
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:image_id] )
     devise_parameter_sanitizer.permit(:account_update, keys: [:profile] )
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:image_id])
     
   end
   

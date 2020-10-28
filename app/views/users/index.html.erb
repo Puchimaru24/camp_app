@@ -7,10 +7,12 @@
 				 <!--avatar-->
 				<div class="users-index-img d-inline">
 					<%= link_to("/users/#{user.id}") do %>
-						<% if user.avatar.attached? %>
-							<%= image_tag user.avatar, class: "avatar-index rounded-circle mx-auto" %>
-						<% else %>
-							<%= image_tag "default_user.png", class: "avatar-index rounded-circle mx-auto" %>
+						<% if user.image_id == 1 %>
+							<%= image_tag "user1.png", class: "avatar-index rounded-circle mx-auto" %>
+						<% elsif user.image_id == 2 %>
+							<%= image_tag "user2.png", class: "avatar-index rounded-circle mx-auto" %>
+						<% elsif user.image_id == 3 %>
+							<%= image_tag "user3.png", class: "avatar-index rounded-circle mx-auto" %>
 						<% end %>
 					<% end %>
 				</div>

@@ -7,10 +7,12 @@
       <% end %>
       <div class="post-show-user">
         <div class="post-show-img d-inline">
-          <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar, class: "avatar-show rounded-circle mx-auto" %>
-          <% else %>
-            <%= image_tag "default_user.png", class: "avatar-show rounded-circle mx-auto" %>
+          <% if @user.image_id == 1 %>
+            <%= image_tag "user1.png", class: "avatar-show rounded-circle mx-auto" %>
+          <% elsif @user.image_id == 2 %>
+            <%= image_tag "user2.png", class: "avatar-show rounded-circle mx-auto" %>
+          <% elsif @user.image_id == 3 %>
+            <%= image_tag "user3.png", class: "avatar-show rounded-circle mx-auto" %>
           <% end %>
         </div>
         <div class="post-show-username d-inline">
