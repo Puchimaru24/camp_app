@@ -7,8 +7,6 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :image_id, presence: true
   
-  has_one_attached :avatar
-  
   
   has_many :posts, :dependent => :destroy #ユーザー削除時投稿も削除
   has_many :gears, :dependent => :destroy

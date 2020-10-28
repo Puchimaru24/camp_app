@@ -10,6 +10,10 @@
           <%= image_tag "user2.png", class: "avatar rounded-circle mx-auto d-block" %>
         <% elsif @user.image_id == 3 %>
           <%= image_tag "user3.png", class: "avatar rounded-circle mx-auto d-block" %>
+        <% elsif @user.image_id == 4 %>
+          <%= image_tag "user4.png", class: "avatar rounded-circle mx-auto d-block" %>
+        <% elsif @user.image_id == 5 %>
+          <%= image_tag "user5.png", class: "avatar rounded-circle mx-auto d-block" %>
         <% end %>
       </div>
       
@@ -57,6 +61,10 @@
                   <%= image_tag "user2.png", class: "avatar-index rounded-circle mx-auto" %>
                 <% elsif post.user.image_id == 3 %>
                   <%= image_tag "user3.png", class: "avatar-index rounded-circle mx-auto" %>
+                <% elsif post.user.image_id == 4 %>
+                  <%= image_tag "user4.png", class: "avatar-index rounded-circle mx-auto" %>
+                <% elsif post.user.image_id == 5 %>
+                  <%= image_tag "user5.png", class: "avatar-index rounded-circle mx-auto" %>
                 <% end %>
               <% end %>
             </div>
