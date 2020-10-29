@@ -4,11 +4,15 @@
     <% @gear1.each do |gear| %>
       <div class="collapse show" id="index1">
         <div class="gear-index-item mb-20">
-          <% if gear.image.attached? %>
+          <%
+=begin%>
+ <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
             <%= image_tag "default_gear.jpg", class: "index-img" %>
-          <% end %>
+          <% end %> 
+<%
+=end%>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
           
@@ -31,11 +35,15 @@
     <% @gear2.each do |gear| %>
       <div class="collapse show" id="index2">
         <div class="gear-index-item mb-20">
-          <% if gear.image.attached? %>
+          <%
+=begin%>
+ <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
             <%= image_tag "default_gear.jpg", class: "index-img" %>
-          <% end %>
+          <% end %> 
+<%
+=end%>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
           
@@ -58,11 +66,15 @@
     <% @gear3.each do |gear| %>
       <div class="collapse show" id="index3">
         <div class="gear-index-item mb-20">
-          <% if gear.image.attached? %>
+          <%
+=begin%>
+ <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
             <%= image_tag "default_gear.jpg", class: "index-img" %>
-          <% end %>
+          <% end %> 
+<%
+=end%>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
           
@@ -85,11 +97,15 @@
     <% @gear4.each do |gear| %>
       <div class="collapse show" id="index4">
         <div class="gear-index-item mb-20">
-          <% if gear.image.attached? %>
+          <%
+=begin%>
+ <% if gear.image.attached? %>
             <%= image_tag gear.image, class: "index-img" %>
           <% else %>
             <%= image_tag "default_gear.jpg", class: "index-img" %>
-          <% end %>
+          <% end %> 
+<%
+=end%>
           
           <%= link_to(gear.name, "/gears/#{gear.id}", class: "main-item") %>
           

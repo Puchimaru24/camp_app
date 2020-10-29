@@ -5,14 +5,18 @@
         
         <div class="card">
           <div class="card-body">
-            <<%= @gear.category %>>
+            <%= @gear.category %>
           </div>
           
-          <% if @gear.image.attached? %>
+          <%
+=begin%>
+ <% if @gear.image.attached? %>
             <%= image_tag @gear.image, class: "card-img" %>
           <% else %>
             <%= image_tag "default_gear.jpg", class: "card-img" %>
-          <% end %>
+          <% end %> 
+<%
+=end%>
           
           <div class="card-body">
             <p class="card-text">
