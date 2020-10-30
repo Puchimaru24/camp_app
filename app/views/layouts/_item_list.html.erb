@@ -1,9 +1,15 @@
 <% if @items.present? %>
   <% @items.first(10).each do |item| %>
     <div class="items-index-item">
-      <%=  %>
-      <%= link_to item.name, "#{item.url}" %>
-      <%= number_with_delimiter(item.price) %>円
+      <div class="search-img">
+        <img src="<%= item["mediumImageUrls"][0] %>" alt="rakuten img">
+      </div>
+      <div class="search-name">
+        <%= link_to item.name, "#{item.url}" %>
+      </div>
+      <div class="search-price">
+        <%= number_with_delimiter(item.price) %>円
+      </div>
     </div>
   <% end %>
 <% end %>

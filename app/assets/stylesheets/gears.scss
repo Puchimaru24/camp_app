@@ -12,6 +12,7 @@
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
+  background: #fffed4;
 }
 .card-img {
   width: 400px;
@@ -49,4 +50,9 @@
 }
 .others {
   background: #c7c8d1;
+}
+.gear-name {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 5px;
 }

@@ -25,7 +25,7 @@
       </div>
       
       <h5>
-        <%= @post.content %>
+        <%= safe_join(@post.content.split("\n"),tag(:br)) %>
       </h5>
       
       <div class="post-show-time text-secondary">

@@ -39,7 +39,9 @@
         </div>
         <!--content-->
         <div class="post-content">
-          <%= link_to(post.content, "/posts/#{post.id}", class: "text-dark no-deco") %>
+          <%= link_to "/posts/#{post.id}", class: "text-dark no-deco" do %>
+            <%= safe_join(post.content.split("\n"),tag(:br)) %>
+          <% end %>
         </div>
       </div>
     <% end %>

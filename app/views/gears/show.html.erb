@@ -2,36 +2,16 @@
   <div class="main gears-show">
     <div class="container">
       <div class="gear-show-item">
-        
-        <div class="card">
-          <div class="card-body">
-            <%= @gear.category %>
-          </div>
-          
-          <%
-=begin%>
- <% if @gear.image.attached? %>
-            <%= image_tag @gear.image, class: "card-img" %>
-          <% else %>
-            <%= image_tag "default_gear.jpg", class: "card-img" %>
-          <% end %> 
-<%
-=end%>
-          
-          <div class="card-body">
-            <p class="card-text">
-              <h4 class="card-title"><%= @gear.name %></h4>
-            </p>
-          </div>
-          </div>
+        <div class="gear-name">
+          <%= @gear.name %>
         </div>
-        
-        <ul class="list-group">
-          <p>メーカー</p>
+
+        <ul class="list-group gear-show-list">
+          <p class="show-maker">メーカー</p>
           <li class="list-group-item"><%= @gear.maker %></li>
-          <p>価格</p>
+          <p class="show-price">価格</p>
           <li class="list-group-item"><%= number_to_currency(@gear.price, :format => "%u%n", :unit => "￥") %></li>
-          <p>メモ</p>
+          <p class="show-memo">メモ</p>
           <li class="list-group-item"><%= @gear.memo %></li>
         </ul>
         <%= render "layouts/link" %>
