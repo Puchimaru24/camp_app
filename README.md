@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Name
 
-Things you may want to cover:
+"CampApp" is a communication app for campers with Ruby.
 
-* Ruby version
+# Features
 
-* System dependencies
+I made this in the hope that there would be a place where 
+I could share the opinions and ideas of others when camping.
+![スクリーンショット (117)](https://user-images.githubusercontent.com/60927933/101880633-94c65c80-3bd6-11eb-9cd7-40ae8dfc7636.png)
 
-* Configuration
+We also created a property management function to solve the camper's agenda.
+![スクリーンショット (116)](https://user-images.githubusercontent.com/60927933/101880790-d35c1700-3bd6-11eb-8807-9ecd156a07de.png)
 
-* Database creation
+# Requirement
 
-* Database initialization
+* Ruby 2.6.3p62
+* Ruby on Rails 5.2.4.4
+* And gems
 
-* How to run the test suite
+Environments under cloud9 of AWS is tested.
 
-* Services (job queues, cache servers, search engines, etc.)
+# Author
 
-* Deployment instructions
+* Yamato Ooki
+* KansaiUniversity
+* yamato.ook@gmail.com
+* Qiita : https://qiita.com/yamatoooki
 
-* ...
+Enjoy camping life!
+Thank you!
