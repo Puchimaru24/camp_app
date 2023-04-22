@@ -20,6 +20,9 @@ module CampApp
     # DBの保存時間を変更する
     config.active_record.default_timezone = :local
     config.time_zone = 'Tokyo'
+
+    #デプロイするサービスのホストを追加する
+    config.hosts << 'xxx.onrender.com'
     
   end
 end
